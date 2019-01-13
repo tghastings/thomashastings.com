@@ -16,6 +16,7 @@ var posts = new Vue({
   },
 });
 var req = new XMLHttpRequest();
+req.responseType = 'json';
 req.onreadystatechange = function () {
   var t16 = [];
   var t17 = [];
