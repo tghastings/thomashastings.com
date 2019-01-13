@@ -53,5 +53,5 @@ req.onreadystatechange = function () {
     // console.log(this.response);
   }
 };
-req.open("GET", "http://api.thomashastings.com:8090/posts", true);
+req.open("GET", "https://api.ascode.io/posts", true);
 req.send();

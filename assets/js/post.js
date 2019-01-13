@@ -32,5 +32,5 @@ req.onreadystatechange = function () {
     console.log(this.response);
   }
 };
-req.open("GET", "http://api.thomashastings.com:8090/post/"+postID, true);
+req.open("GET", "https://api.ascode.io/post/"+postID, true);
 req.send();
