@@ -562,3 +562,11 @@ a.pagination-item:hover {
     border-bottom-right-radius: 4px;
   }
 }
+.blog-footer {
+  padding: 2.5rem 0;
+  color: #999;
+  text-align: center;
+}
+.blog-footer a{
+  color: #c70404;
+}
