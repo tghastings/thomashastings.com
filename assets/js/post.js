@@ -27,6 +27,6 @@ $.ajax('https://api.ascode.io/post/' + postID,   // request url
       var t18 = [];
       var t19 = [];
       console.log(data);
-      post.post = this.data;
+      post.post = data;
     }
   });
