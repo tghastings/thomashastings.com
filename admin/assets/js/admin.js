@@ -4,17 +4,20 @@ $("#loginBtn").click(function () {
   let password = $( "#inputPassword" ).val();
   let loginObj = '{ "Username": "'+username+'", "Password": "'+password+'" }';
   console.log(loginObj);
-  login(loginObj);
+  getToken(loginObj);
 });
 
-function login(formData) {
+function getToken(formData) {
   $.ajax({
     type: 'POST',
     url: "https://api.ascode.io/auth",
+    // url: "http://dev.local:8090/auth",
     data: formData,
     dataType: "json",
     contentType: "text/plain",
-    success: function (data) { console.log(data); },
-    failure: function(data) {console.log(data);}
+    success: function (data, status, xhr) { 
+      setCookie("token", data.Message, 5);
+    },
+    error: function(data) {console.log("error");}
   });
 }
