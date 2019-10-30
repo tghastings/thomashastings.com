@@ -26,8 +26,8 @@ $.ajax('https://api.ascode.io/posts',   // request url
       var t18 = [];
       var t19 = [];
       // app.posts = this.response;
-      for (var i in this.data) {
-        var post = this.data[i];
+      for (var i in data) {
+        var post = data[i];
         var postDate = new Date(post.Date);
         var postYear = postDate.getYear();
         switch (postYear) {
