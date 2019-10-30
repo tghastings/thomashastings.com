@@ -15,9 +15,8 @@ function getToken(formData, username) {
     data: formData,
     dataType: "json",
     contentType: "text/plain",
-    success: function (data, status, xhr) { 
-      setCookie("username", username, 5);
-      setCookie("token", data.Message, 5);
+    success: function (data, status, xhr) {
+      getTokenSuccess(data.Message, username)
     },
     error: function(data) {getTokenError(data.responseText)}
   });
@@ -25,4 +24,10 @@ function getToken(formData, username) {
 
 function getTokenError(errorMsg) {
   $( "#alert" ).html("<p>Error: "+errorMsg+"</p>");
+}
+
+function getTokenSuccess(token, username) {
+  setCookie("username", username, 5);
+  setCookie("token", token, 5);
+  $("#login").hide();
 }
