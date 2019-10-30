@@ -19,18 +19,16 @@ function getUrlParameter(name) {
 };
 var postID = getUrlParameter('id');
 
-var req = new XMLHttpRequest();
-req.responseType = 'json';
-req.onreadystatechange = function () {
-  var t16 = [];
-  var t17 = [];
-  var t18 = [];
-  var t19 = [];
+$.ajax('https://api.ascode.io/post/' + postID,   // request url
+  {
+    success: function (data, status, xhr) {
+      var t16 = [];
+      var t17 = [];
+      var t18 = [];
+      var t19 = [];
+      post.post = this.data;
 
-  if (this.readyState == 4 && this.status == 200) {
-    post.post = this.response;
-    console.log(this.response);
-  }
-};
-req.open("GET", "https://api.ascode.io/post/"+postID, true);
-req.send();
+      req.open("GET", "https://api.ascode.io/post/" + postID, true);
+      req.send();
+    }
+  });

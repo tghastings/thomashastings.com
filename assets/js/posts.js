@@ -19,8 +19,6 @@ var posts = new Vue({
 $.ajax('https://api.ascode.io/posts',   // request url
   {
     success: function (data, status, xhr) {// success callback function
-      console.log(data);
-      console.log(status);
       var t16 = [];
       var t17 = [];
       var t18 = [];
