@@ -570,7 +570,10 @@ a.pagination-item:hover {
 .blog-footer a{
   color: #c70404;
 }
-
+.inputTitle {
+  font-size: 25px;
+  font-family: 'PT Serif', serif;
+}
 .login {
   width: 340px;
     margin: 50px auto;

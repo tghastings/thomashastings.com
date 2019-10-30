@@ -40,3 +40,35 @@ function getTokenSuccess(token, username) {
   $("#login").hide();
   $("#newPost").show();
 }
+
+
+//Get info for new post
+$("#inputNewPostTitle").click(function () {
+  simplemde.togglePreview();
+  let token = getCookie('token');
+  let author = getCookie('username');
+  let title = $("#inputNewPostTitle").val();
+  let content = $('.editor-preview').html()
+  let date = moment().format('MMMM D, YYYY');
+  let jsonString = '{ "Author": "' + author + '", "Title": "' + title + '"  , "Date": "' + date + '", "Content": "' + content + '" }';
+  postNewArticle(jsonString, token);
+});
+
+
+function postNewArticle(formData, token) {
+  $.ajax({
+    type: 'POST',
+    headers: {
+      "Authorization": token
+    },
+    url: "https://api.ascode.io/admin/post/create",
+    // url: "http://dev.local:8090/admin/post/create",
+    data: formData,
+    dataType: "json",
+    contentType: "text/plain",
+    success: function (data, status, xhr) {
+      getTokenSuccess(data.Message, username)
+    },
+    error: function (data) { getTokenError(data.responseText) }
+  });
+}
