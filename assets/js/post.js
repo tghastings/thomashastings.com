@@ -27,8 +27,5 @@ $.ajax('https://api.ascode.io/post/' + postID,   // request url
       var t18 = [];
       var t19 = [];
       post.post = this.data;
-
-      req.open("GET", "https://api.ascode.io/post/" + postID, true);
-      req.send();
     }
   });
