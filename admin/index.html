@@ -14,6 +14,8 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|Roboto:400,400italic">
   <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.6.3/css/all.css"
     integrity="sha384-LRlmVvLKVApDVGuspQFnRQJjkv0P7/YFrw84YYQtmYG4nK8c+M+NlmYDCv0rKWpG" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
+
 
   <link rel="canonical" href="https://www.thomashastings.com/" />
   <meta name="referrer" content="no-referrer-when-downgrade" />
@@ -32,6 +34,7 @@
 <body>
   <div class="container content">
     <header class="masthead" include-html="../partials/header.html"></header>
+    <!-- LOGIN DIV -->
     <main id="login">
       <div id="alert" class="badMessage"></div>
       <div class="login">
@@ -47,12 +50,21 @@
           in</button>
       </div>
     </main>
+    <!-- NEW POST DIV -->
+    <main id="newPost">
+      <div class="form-label-group">
+        <input id="inputNewPostTitle" class="form-control" placeholder="Title" required autofocus>
+      </div>
+      <textarea id="markdown"></textarea>
+
+    </main>
     <footer class="footer blog-footer" include-html="../partials/footer.html"></footer>
   </div>
   <!-- JS BELOW THIS LINE-->
   <script src="../assets/js/jquery.min.js"></script>
   <script src="../assets/js/vue.min.js"></script>
   <script src="../assets/js/moment.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
   <script src="../assets/js/app.js"></script>
   <script src="../admin/assets/js/admin.js"></script>
   <script>
