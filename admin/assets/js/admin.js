@@ -1,7 +1,9 @@
 //get username and password
 $("#loginBtn").click(function () {
-  let username = $( "#login#inputUsername" ).val();
-  alert(username);
+  let username = $( "#inputUsername" ).val();
+  let password = $( "#inputPassword" ).val();
+  let loginObj = JSON.parse('{ "username": "'+username+'", "password": "'+password+'" }');
+  login(loginObj);
 });
 
 function login(formData) {
@@ -10,6 +12,6 @@ function login(formData) {
     url: "https://api.ascode.io/auth",
     data: formData,
     dataType: "json",
-    success: function (resultData) { alert("Save Complete") }
+    success: function (data) { console.log(data); }
   });
 }
