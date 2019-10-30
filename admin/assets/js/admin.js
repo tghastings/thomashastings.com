@@ -1,5 +1,6 @@
 //get username and password
 $("#loginBtn").click(function () {
+  $( "#alert" ).html("");
   let username = $( "#inputUsername" ).val();
   let password = $( "#inputPassword" ).val();
   let loginObj = '{ "Username": "'+username+'", "Password": "'+password+'" }';
