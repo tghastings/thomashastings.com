@@ -591,3 +591,8 @@ a.pagination-item:hover {
   text-transform: uppercase;
   border-radius: 5px;
 }
+.form-control {
+  padding: 10px;
+    width: 100%;
+    margin-bottom: 10px;
+}
