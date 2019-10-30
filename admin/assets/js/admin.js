@@ -2,7 +2,8 @@
 $("#loginBtn").click(function () {
   let username = $( "#inputUsername" ).val();
   let password = $( "#inputPassword" ).val();
-  let loginObj = JSON.parse('{ "username": "'+username+'", "password": "'+password+'" }');
+  let loginObj = JSON.parse('{ "Username": "'+username+'", "Password": "'+password+'" }');
+  console.log(loginObj);
   login(loginObj);
 });
 
@@ -11,7 +12,9 @@ function login(formData) {
     type: 'POST',
     url: "https://api.ascode.io/auth",
     data: formData,
-    dataType: "json",
-    success: function (data) { console.log(data); }
+    dataType: "text",
+    contentType: "application/json",
+    success: function (data) { console.log(data); },
+    failure: function(data) {console.log(data);}
   });
 }
