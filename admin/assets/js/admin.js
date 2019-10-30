@@ -3,11 +3,10 @@ $("#loginBtn").click(function () {
   let username = $( "#inputUsername" ).val();
   let password = $( "#inputPassword" ).val();
   let loginObj = '{ "Username": "'+username+'", "Password": "'+password+'" }';
-  console.log(loginObj);
-  getToken(loginObj);
+  getToken(loginObj, username);
 });
 
-function getToken(formData) {
+function getToken(formData, username) {
   $.ajax({
     type: 'POST',
     url: "https://api.ascode.io/auth",
@@ -16,6 +15,7 @@ function getToken(formData) {
     dataType: "json",
     contentType: "text/plain",
     success: function (data, status, xhr) { 
+      setCookie("username", username, 5);
       setCookie("token", data.Message, 5);
     },
     error: function(data) {getTokenError(data.responseText)}
