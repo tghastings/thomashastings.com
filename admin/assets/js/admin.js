@@ -1,6 +1,7 @@
 //get username and password
-$("#login").click(function () {
-  alert("Handler for .click() called.");
+$("#loginBtn").click(function () {
+  let username = $( "#login#inputUsername" ).val();
+  alert(username);
 });
 
 function login(formData) {
