@@ -32,7 +32,8 @@
 <body>
   <div class="container content">
     <header class="masthead" include-html="../partials/header.html"></header>
-    <main id="login">
+    <main id="login" class="login">
+      <h2>Login</h2>
         <div class="form-label-group">
           <input id="inputUsername" class="form-control" placeholder="Username" required autofocus>
           <label for="inputEmail">Username</label>
@@ -42,7 +43,7 @@
           <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
           <label for="inputPassword">Password</label>
         </div>
-        <button id="loginBtn" class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Sign in</button>
+        <button id="loginBtn" class="loginBtn btn btn-lg btn-primary btn-block text-uppercase" type="submit">Sign in</button>
     </main>
     <footer class="footer blog-footer" include-html="../partials/footer.html"></footer>
   </div>
