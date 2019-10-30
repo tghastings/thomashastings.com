@@ -1,3 +1,12 @@
+var simplemde = new SimpleMDE({
+  autosave: {
+    enabled: true,
+    uniqueId: "HastingsBlog",
+    delay: 1000,
+  },
+  element: document.getElementById("markdown")
+});
+
 //get username and password
 $("#loginBtn").click(function () {
   $("#alert").html("");
@@ -29,21 +38,13 @@ function getTokenError(errorMsg) {
 function getTokenSuccess(token, username) {
   setCookie("username", username, 5);
   setCookie("token", token, 5);
-  var simplemde = new SimpleMDE({
-    autosave: {
-      enabled: true,
-      uniqueId: "HastingsBlog",
-      delay: 1000,
-    },
-    element: document.getElementById("markdown")
-  });
   $("#login").hide();
   $("#newPost").show();
 }
 
 
 //Get info for new post
-$("#inputNewPostTitle").click(function () {
+$("#SubmitNewPost").click(function () {
   simplemde.togglePreview();
   let token = getCookie('token');
   let author = getCookie('username');
