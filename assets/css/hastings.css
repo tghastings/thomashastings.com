@@ -598,6 +598,5 @@ a.pagination-item:hover {
 }
 .badMessage {
   text-align: center;
-  padding:10px;
-  color: #000;
+  color: #c70404;
 }
