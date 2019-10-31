@@ -7,6 +7,15 @@ var simplemde = new SimpleMDE({
   element: document.getElementById("markdown")
 });
 
+function escapeHtml(unsafe) {
+  return unsafe
+       .replace(/&/g, "&amp;")
+       .replace(/</g, "&lt;")
+       .replace(/>/g, "&gt;")
+       .replace(/"/g, "&quot;")
+       .replace(/'/g, "&#039;");
+}
+
 //get username and password
 $("#loginBtn").click(function () {
   $("#alert").html("");
@@ -51,6 +60,7 @@ $("#SubmitNewPost").click(function () {
   let title = $("#inputNewPostTitle").val();
   let content = $('.editor-preview').html()
   content = content.trim();
+  content = escapeHtml(content);
   let date = moment().format('MMMM D, YYYY');
   let jsonString = '{ "Author": "' + author + '", "Title": "' + title + '", "Date": "' + date + '", "Content": "' + content + '" }';
   postNewArticle(jsonString, token);
