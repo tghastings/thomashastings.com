@@ -4,20 +4,10 @@ Vue.filter('formatDate', function (value) {
   }
 });
 
-Vue.filter('unescapeHtml', function (value) {
-  if (value) {
-    return value
-      .replace(/&amp;/g, "&")
-      .replace(/&lt;/g, "<")
-      .replace(/&gt;/g, ">")
-      .replace(/&quot;/g, '"')
-      .replace(/&#039;/g, "'");
-  }
-});
-
-function escapeHtml(unsafe) {
-  
+function unescapeHTML(value) {
+    return value.replace(/&amp;/g, "&").replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&quot;/g, '"').replace(/&#039;/g, "'");
 }
+
 var post = new Vue({
   el: '#post',
   data: function () {
@@ -42,6 +32,7 @@ $.ajax('https://api.ascode.io/post/' + postID,   // request url
       var t18 = [];
       var t19 = [];
       console.log(data);
+      data.Content = unescapeHTML(data.Content);
       post.post = data;
     }
   });
