@@ -51,7 +51,8 @@ $("#SubmitNewPost").click(function () {
   let title = $("#inputNewPostTitle").val();
   let content = $('.editor-preview').html()
   let date = moment().format('MMMM D, YYYY');
-  let jsonString = '{ "Author": "' + author + '", "Title": "' + title + '"  , "Date": "' + date + '", "Content": "' + content + '" }';
+  let jsonString = '{ "Author": "' + author + '", "Title": "' + title + '", "Date": "' + date + '", "Content": "' + content + '" }';
+  console.log(jsonString);
   postNewArticle(jsonString, token);
 });
 
@@ -62,14 +63,14 @@ function postNewArticle(formData, token) {
     headers: {
       "Authorization": token
     },
-    url: "https://api.ascode.io/admin/post/create",
-    // url: "http://dev.local:8090/admin/post/create",
+    // url: "https://api.ascode.io/admin/post/create",
+    url: "http://dev.local:8090/admin/post/create",
     data: formData,
     dataType: "json",
     contentType: "text/plain",
     success: function (data, status, xhr) {
-      getTokenSuccess(data.Message, username)
+      alert("Message posted!")
     },
-    error: function (data) { getTokenError(data.responseText) }
+    error: function (data) { console.log("Error!") }
   });
 }
