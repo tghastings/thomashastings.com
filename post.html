@@ -38,7 +38,7 @@
       <div class="article">
         <h2>{{ post.Title }}</h2>
         <date>{{ post.Date | formatDate }}</date>
-        {{post.Content | unescapeHtml>
+        {{post.Content | unescapeHtml }}
       </div>
     </main>
     <footer class="footer blog-footer" include-html="partials/footer.html"></footer>
