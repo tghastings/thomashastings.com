@@ -9,8 +9,11 @@ var simplemde = new SimpleMDE({
 
 function escapeHtml(unsafe) {
   return unsafe
-       .replace(/&/g, "&amp;")
-       .replace(/"/g, "&quot;")
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
 }
 
 //get username and password
@@ -60,6 +63,7 @@ $("#SubmitNewPost").click(function () {
   content = escapeHtml(content);
   let date = moment().format('MMMM D, YYYY');
   let jsonString = '{ "Author": "' + author + '", "Title": "' + title + '", "Date": "' + date + '", "Content": "' + content + '" }';
+  simplemde.clearAutosavedValue();
   postNewArticle(jsonString, token);
 });
 
@@ -76,7 +80,6 @@ function postNewArticle(formData, token) {
     dataType: "json",
     contentType: "text/plain",
     success: function (data, status, xhr) {
-      simplemde.clearAutosavedValue();
       alert("Message posted!")
     },
     error: function (data) { console.log("Error!") }

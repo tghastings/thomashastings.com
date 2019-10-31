@@ -3,6 +3,21 @@ Vue.filter('formatDate', function (value) {
     return moment(String(value)).format('LL')
   }
 });
+
+Vue.filter('unescapeHtml', function (value) {
+  if (value) {
+    return value
+    .replace(/&amp;/g, "&")
+    .replace(/&lt;/g, "<")
+    .replace(/&gt;/g, ">")
+    .replace(/&quot;/g, '"')
+    .replace(/&#039;/g, "'");
+  }
+});
+
+function escapeHtml(unsafe) {
+  
+}
 var post = new Vue({
   el: '#post',
   data: function () {
