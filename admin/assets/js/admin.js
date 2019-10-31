@@ -61,7 +61,6 @@ $("#SubmitNewPost").click(function () {
   let date = moment().format('MMMM D, YYYY');
   let jsonString = '{ "Author": "' + author + '", "Title": "' + title + '", "Date": "' + date + '", "Content": "' + content + '" }';
   postNewArticle(jsonString, token);
-  simplemde.clearAutosavedValue();
 });
 
 
@@ -77,6 +76,7 @@ function postNewArticle(formData, token) {
     dataType: "json",
     contentType: "text/plain",
     success: function (data, status, xhr) {
+      simplemde.clearAutosavedValue();
       alert("Message posted!")
     },
     error: function (data) { console.log("Error!") }
