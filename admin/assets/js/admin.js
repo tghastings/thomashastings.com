@@ -53,8 +53,8 @@ $("#SubmitNewPost").click(function () {
   content = content.trim();
   let date = moment().format('MMMM D, YYYY');
   let jsonString = '{ "Author": "' + author + '", "Title": "' + title + '", "Date": "' + date + '", "Content": "' + content + '" }';
-  console.log(jsonString);
   postNewArticle(jsonString, token);
+  simplemde.clearAutosavedValue();
 });
 
 
