@@ -50,6 +50,7 @@ $("#SubmitNewPost").click(function () {
   let author = getCookie('username');
   let title = $("#inputNewPostTitle").val();
   let content = $('.editor-preview').html()
+  content = content.trim();
   let date = moment().format('MMMM D, YYYY');
   let jsonString = '{ "Author": "' + author + '", "Title": "' + title + '", "Date": "' + date + '", "Content": "' + content + '" }';
   console.log(jsonString);
