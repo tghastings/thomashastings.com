@@ -64,8 +64,8 @@ function postNewArticle(formData, token) {
     headers: {
       "Authorization": token
     },
-    // url: "https://api.ascode.io/admin/post/create",
-    url: "http://dev.local:8090/admin/post/create",
+    url: "https://api.ascode.io/admin/post/create",
+    // url: "http://dev.local:8090/admin/post/create",
     data: formData,
     dataType: "json",
     contentType: "text/plain",
