@@ -588,12 +588,12 @@ a.pagination-item:hover {
   min-height: 38px;
   border-radius: 2px;
   font-size: 15px;
-  border: 1px solid #d8d8d8;
-  font-weight: bold;
+  border: 0;
+  border-bottom: 2px solid #c5c5c5;
+  font-weight: normal;
   width: 100%;
-  text-transform: uppercase;
   border-radius: 5px;
-  color: #c70404;
+  color: #999;
 }
 .form-control {
   padding: 10px;
