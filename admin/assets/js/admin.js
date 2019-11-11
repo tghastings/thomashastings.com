@@ -54,7 +54,9 @@ function getTokenError(errorMsg) {
 function getTokenSuccess(token, username) {
   setCookie("username", username, 5);
   setCookie("token", token, 5);
+  $("#subNavUsername").html(username);
   $("#login").hide();
+  $("#adminMenu").show();
   $("#newPost").show();
 }
 

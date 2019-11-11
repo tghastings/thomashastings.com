@@ -606,3 +606,36 @@ a.pagination-item:hover {
   text-align: center;
   color: #c70404;
 }
+.sub-nav {
+  padding:1em;
+  margin-bottom:0;
+
+  background-color:#efeee2;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  border: 5px solid #fff;
+}
+.sub-nav h4{
+  float:left;
+  display:inline-block;
+  padding:0;
+  margin:0;
+}
+.sub-nav a{
+  color:#333;
+  font-size:16px;
+}
+.sub-nav ul{
+  padding:0;
+  margin:0;
+  text-align: right;
+}
+.sub-nav li {
+  padding:0;
+  margin:0;
+  list-style:none;
+  display:inline-block;
+}
+.sub-nav li:last-child {
+  border-left: 1px solid #fff;
+  padding-left:5px;
+}
