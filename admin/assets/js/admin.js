@@ -32,10 +32,9 @@ function getCookie(cname) {
   return "";
 };
 
-function checkCookie() {
-  var username = getCookie("Token");
-  console.log(username)
-};
+function destroyCookie(name) {
+  createCookie(name, "", -1);
+}
 
 // Content
 window.onload = main();
@@ -70,6 +69,15 @@ function includeHTML() {
 
 function main() {
   includeHTML();
+}
+
+var urlParams = new URLSearchParams(window.location.search);
+if (urlParams.has('action')) {
+  let action = urlParams.get('action');
+  if (action == "logout") {
+    destroyCookie('token');
+    window.location.replace("/");
+  }
 }
 
 
