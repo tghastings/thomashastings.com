@@ -17,8 +17,10 @@ function escapeHtml(unsafe) {
 }
 
 if (getCookie('token') !== "") {
-  let token = getCookie('token');
-  console.log(token);
+  let gotToken = getCookie('token');
+  let gotUsername = getCookie('username')
+  getTokenSuccess(gotToken, gotUsername);
+  
 }
 
 //get username and password
