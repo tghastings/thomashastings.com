@@ -607,9 +607,9 @@ a.pagination-item:hover {
   color: #c70404;
 }
 .sub-nav {
+  font-family: 'PT Serif', serif;
   padding:1em;
-  margin-bottom:0;
-
+  margin-bottom: 2em;
   background-color:#efeee2;
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
   border: 5px solid #fff;
