@@ -397,7 +397,7 @@ tbody tr:nth-child(odd) th {
 
 }
 .masthead-title a {
-  color: #c70404;
+  color: #333;
   float: left;
    border-top: #fff solid 1px;
 }
