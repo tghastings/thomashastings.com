@@ -635,7 +635,3 @@ a.pagination-item:hover {
   list-style:none;
   display:inline-block;
 }
-.sub-nav li:last-child {
-  border-left: 1px solid #fff;
-  padding-left:5px;
-}
