@@ -16,8 +16,8 @@ function escapeHtml(unsafe) {
     .replace(/'/g, "&#039;");
 }
 
-if (getToken('token') !== "") {
-  let token = getToken('token');
+if (getCookie('token') !== "") {
+  let token = getCookie('token');
   console.log(token);
 }
 
