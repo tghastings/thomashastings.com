@@ -16,7 +16,8 @@ function escapeHtml(unsafe) {
     .replace(/'/g, "&#039;");
 }
 
-if (getToken(token) !== "") {
+if (getToken('token') !== "") {
+  let token = getToken('token');
   console.log(token);
 }
 
