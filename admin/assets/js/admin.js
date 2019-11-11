@@ -16,6 +16,10 @@ function escapeHtml(unsafe) {
     .replace(/'/g, "&#039;");
 }
 
+if (getToken(token) !== "") {
+  console.log(token);
+}
+
 //get username and password
 $("#loginBtn").click(function () {
   $("#alert").html("");
