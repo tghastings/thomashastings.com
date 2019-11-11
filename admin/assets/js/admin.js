@@ -33,7 +33,7 @@ function getCookie(cname) {
 };
 
 function destroyCookie(name) {
-  createCookie(name, "", -1);
+  setCookie(name, "", -1);
 }
 
 // Content
