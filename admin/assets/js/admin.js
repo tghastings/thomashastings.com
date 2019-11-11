@@ -1,12 +1,3 @@
-var simplemde = new SimpleMDE({
-  autosave: {
-    enabled: true,
-    uniqueId: "HastingsBlog",
-    delay: 1000,
-  },
-  element: document.getElementById("markdown")
-});
-
 function escapeHtml(unsafe) {
   return unsafe
     .replace(/&/g, "&amp;")
