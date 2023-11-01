@@ -148,7 +148,7 @@ function postNewArticle(formData, token) {
     headers: {
       "Authorization": token
     },
-    url: "https://urban-space-robot-976699vqgr37r6p-8090.app.github.dev//admin/post/create",
+    url: "https://urban-space-robot-976699vqgr37r6p-8090.app.github.dev/admin/post/create",
     // url: "http://dev.local:8090/admin/post/create",
     data: formData,
     dataType: "json",
