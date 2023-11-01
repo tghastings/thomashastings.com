@@ -100,7 +100,7 @@ $("#loginBtn").click(function () {
 function getToken(formData, username) {
   $.ajax({
     type: 'POST',
-    url: "https://api.ascode.io/auth",
+    url: "https://urban-space-robot-976699vqgr37r6p-8090.app.github.dev/auth",
     // url: "http://dev.local:8090/auth",
     data: formData,
     dataType: "json",
@@ -148,7 +148,7 @@ function postNewArticle(formData, token) {
     headers: {
       "Authorization": token
     },
-    url: "https://api.ascode.io/admin/post/create",
+    url: "https://urban-space-robot-976699vqgr37r6p-8090.app.github.dev//admin/post/create",
     // url: "http://dev.local:8090/admin/post/create",
     data: formData,
     dataType: "json",
